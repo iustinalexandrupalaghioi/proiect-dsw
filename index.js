@@ -28,8 +28,7 @@ app.get("/", async (req, res) => {
 app.get("/people", async (req, res) => {
   try {
     const response = await axios.get(process.env.OPEN_NOTIFY_API_URL);
-    const data = response.data.people;
-    const number = response.data.number;
+    const { people: data, number } = response.data;
 
     // const data = [
     //   { name: "Jasmin Moghbeli", craft: "ESA" },
