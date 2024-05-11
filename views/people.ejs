@@ -1,9 +1,10 @@
 <%- include("partials/header.ejs")%>
 <div class="container d-flex flex-column align-items-center px-4 py-5">
-  <a href="/" class="btn btn-dark align-self-end">Home</a>
+  <a href="/" class="btn btn-primary align-self-end">Back to News</a>
 
   <h2 class="text-center">
-    Currently there are <Strong><%= number %></Strong> people in space. <br />
+    Currently there are <span class="text-primary"><%= number %></span> people
+    in space. <br />
   </h2>
   <p>You can view their names and crafts in the table below.</p>
 
@@ -19,7 +20,15 @@
       <% sortedPeople.forEach(group => { group.forEach((person, index) => { %>
       <tr>
         <td><%=index + 1%></td>
-        <td><%= person.name %></td>
+        <td>
+          <a
+            class="search text-decoration-none text-dark"
+            target="_blank"
+            title="Click to see more about <%=person.name%>"
+            href="https://search.brave.com/search?q=<%=person.name%>"
+            ><%= person.name %></a
+          >
+        </td>
         <% if (index === 0) { %>
         <td rowspan="<%= group.length %>"><%= person.craft %></td>
         <% } %>

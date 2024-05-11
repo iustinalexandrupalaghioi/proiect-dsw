@@ -1,3 +1,15 @@
 .table {
   width: fit-content;
 }
+.search::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #0d6efd;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.search:hover::after {
+  width: 100%;
+}
