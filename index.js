@@ -1,5 +1,5 @@
 import express from "express";
-import articleRouter from "./routes/article-routes.js";
+import articleRouter from "./routes/articles-routes.js";
 import peopleRoutes from "./routes/people-routes.js";
 const app = express();
 const port = 8000;
