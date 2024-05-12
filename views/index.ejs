@@ -8,14 +8,14 @@
   <p>Check daily news from space or see who is in Space</p>
   <a href="/people" class="btn btn-primary">Who is in Space?</a>
   <div class="row justify-content-center gap-2 py-4">
-    <% articles.forEach(article => { const {id,title, image_url,
-    news_summary_short, site_url} = article %>
+    <% articles.forEach(article => { const { title, image_url,
+    news_summary_short, site_url } = article %>
     <div class="col d-flex justify-content-center">
       <div class="card border-0 shadow" style="width: 18rem">
         <img src="<%= image_url %>" class="card-img-top" alt="<%= title %>" />
         <div class="card-body">
           <h5 class="card-title"><%= title %></h5>
-          <p class="card-text"><%= news_summary_short%></p>
+          <p class="card-text"><%= news_summary_short %></p>
           <a
             href="<%= site_url %>"
             target="_blank"
