@@ -7,8 +7,11 @@
   </h1>
   <p>Check daily news from space or see who is in Space</p>
   <a href="/people" class="btn btn-primary">Who is in Space?</a>
+  <h2 class="align-self-start border-bottom w-100 pb-2 mt-3">
+    News From Space:
+  </h2>
   <div
-    class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center gap-2 py-4"
+    class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center gap-2 py-4 px-4"
   >
     <% articles.forEach(article => { const { title, image_url,
     news_summary_short, site_url } = article %>
@@ -23,7 +26,7 @@
             target="_blank"
             class="btn btn-outline-primary"
           >
-            See full article
+            Read full article
           </a>
         </div>
       </div>
