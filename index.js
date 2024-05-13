@@ -8,6 +8,6 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use("/", router);
 
-app.listen(port, (req, res) => {
+app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
