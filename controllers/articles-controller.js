@@ -15,7 +15,9 @@ const getArticles = async (req, res) => {
 
     const todayArticlesResponse = await axios.get(
       process.env.SPACE_NEWS_API_URL,
-      { headers }
+      {
+        headers,
+      }
     );
     const todayArticles = todayArticlesResponse.data;
 
@@ -25,7 +27,7 @@ const getArticles = async (req, res) => {
       error,
       message: "Oops! Something went wrong. Please try again later!",
     });
-    console.log(error);
+    console.error(error.message);
   }
 };
 
