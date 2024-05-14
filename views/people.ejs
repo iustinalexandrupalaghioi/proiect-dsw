@@ -1,7 +1,9 @@
 <%- include("partials/header.ejs")%>
-<div class="container d-flex flex-column align-items-center px-4 py-5">
+<div class="container d-flex flex-column align-items-center py-4 px-5">
+  <% if(locals.error) {%>
+  <h2 class="align-self-center"><%= message %></h2>
+  <% } else { %>
   <a href="/" class="btn btn-primary align-self-end">Back to News</a>
-
   <h2 class="text-center">
     Currently there are <span class="text-primary"><%= number %></span> people
     in space. <br />
@@ -25,7 +27,7 @@
             class="search text-decoration-none text-dark"
             target="_blank"
             title="Click to see more about <%=person.name%>"
-            href="https://en.wikipedia.org/wiki/<%= person.name %>"
+            href="https://en.wikipedia.org/wiki/<%= person.nameSlug %>"
             ><%= person.name %></a
           >
         </td>
@@ -37,4 +39,4 @@
     </tbody>
   </table>
 </div>
-<%- include("partials/footeer.ejs")%>
+<% } %> <%- include("partials/footeer.ejs")%>

@@ -1,7 +1,8 @@
 <%- include("partials/header.ejs")%>
-<div
-  class="container d-flex flex-column py-4 px-5 justify-content-center align-items-center min-vh-100"
->
+<div class="container d-flex flex-column py-4 px-5 align-items-center">
+  <% if(locals.error) {%>
+  <h2><%= message %></h2>
+  <% } else { %>
   <h1 class="text-center">
     Welcome to Space<span class="text-primary">X</span> App
   </h1>
@@ -16,7 +17,7 @@
   <div
     class="row w-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center justify-content-lg-start gap-2 p-lg-4"
   >
-    <% todayArticles.forEach(article => { const { title, image_url,
+    <% todayArticles.forEach(article => { const { id, title, image_url,
     news_summary_short, site_url } = article %>
     <div class="col" style="width: 18rem">
       <div class="card border-0 shadow w-100">
@@ -45,7 +46,7 @@
   <div
     class="row w-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center justify-content-lg-start gap-2 py-4 px-4"
   >
-    <% articles.forEach(article => { const { title, image_url,
+    <% articles.forEach(article => { const { id, title, image_url,
     news_summary_short, site_url } = article %>
     <div class="col" style="width: 18rem">
       <div class="card border-0 shadow w-100">
@@ -67,4 +68,4 @@
   </div>
   <% } %>
 </div>
-<%- include("partials/footeer.ejs")%>
+<% } %> <%- include("partials/footeer.ejs")%>

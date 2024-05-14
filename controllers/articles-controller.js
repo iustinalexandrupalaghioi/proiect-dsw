@@ -21,6 +21,10 @@ const getArticles = async (req, res) => {
 
     res.render("index.ejs", { articles, todayArticles });
   } catch (error) {
+    res.render("index.ejs", {
+      error,
+      message: "Oops! Something went wrong. Please try again later!",
+    });
     console.log(error);
   }
 };
