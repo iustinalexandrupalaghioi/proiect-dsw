@@ -7,13 +7,16 @@
   </h1>
   <p>Check daily news from space or see who is in Space</p>
   <a href="/people" class="btn btn-primary">Who is in Space?</a>
-  <h2 class="align-self-start border-bottom w-100 pb-2 mt-3">
-    News From Space:
+  <% if(locals.todayArticles) {%>
+  <h2
+    class="align-self-center align-self-lg-start border-bottom w-100 pb-2 mt-3"
+  >
+    Today News For You
   </h2>
   <div
-    class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center gap-2 py-4 px-4"
+    class="row w-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center justify-content-lg-start gap-2 p-lg-4"
   >
-    <% articles.forEach(article => { const { title, image_url,
+    <% todayArticles.forEach(article => { const { title, image_url,
     news_summary_short, site_url } = article %>
     <div class="col" style="width: 18rem">
       <div class="card border-0 shadow w-100">
@@ -33,5 +36,35 @@
     </div>
     <% }) %>
   </div>
+  <% } if(locals.articles) { %>
+  <h2
+    class="align-self-center align-self-lg-start border-bottom w-100 p-lg-4 mt-3"
+  >
+    Other News From Space:
+  </h2>
+  <div
+    class="row w-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center justify-content-lg-start gap-2 py-4 px-4"
+  >
+    <% articles.forEach(article => { const { title, image_url,
+    news_summary_short, site_url } = article %>
+    <div class="col" style="width: 18rem">
+      <div class="card border-0 shadow w-100">
+        <img src="<%= image_url %>" class="card-img-top" alt="<%= title %>" />
+        <div class="card-body">
+          <h5 class="card-title"><%= title %></h5>
+          <p class="card-text"><%= news_summary_short %>...</p>
+          <a
+            href="<%= site_url %>"
+            target="_blank"
+            class="btn btn-outline-primary"
+          >
+            Read full article
+          </a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
 </div>
 <%- include("partials/footeer.ejs")%>
