@@ -7,6 +7,18 @@ const getPeople = async (req, res) => {
     const response = await axios.get(process.env.OPEN_NOTIFY_API_URL);
     const { people, number } = response.data;
 
+    // const people = [
+    //   { name: "Jasmin Moghbeli", craft: "ESA" },
+    //   { name: "Andreas Mogensen", craft: "ESA" },
+    //   { name: "Satoshi Furukawa", craft: "ISS" },
+    //   { name: "Konstantin Borisov", craft: "ISS" },
+    //   { name: "Oleg Kononenko", craft: "NASA" },
+    //   { name: "Nikolai Chub", craft: "ISS" },
+    //   { name: "Loral O'Hara", craft: "ISS" },
+    //   { name: "Mary Sue Van Pelt", craft: "NASA" },
+    // ];
+    // const number = people.length;
+
     //add name slugs to each person
     const updatedPeople = people.map((person) => ({
       ...person,
