@@ -25,9 +25,8 @@ const getPeople = async (req, res) => {
     });
 
     //sort grouped people by name
-    let sortedPeople = [];
-    peopleGroupedByCraft.forEach((group) => {
-      group.sort((a, b) => {
+    let sortedPeople = peopleGroupedByCraft.map((group) => {
+      return group.sort((a, b) => {
         let first = a.name.toLowerCase();
         let second = b.name.toLowerCase();
         if (first < second) {
@@ -38,8 +37,9 @@ const getPeople = async (req, res) => {
         }
         return 0;
       });
-      sortedPeople.push(group);
+      // sortedPeople.push(group);
     });
+    console.log(sortedPeople);
 
     res.render("people.ejs", { sortedPeople, number });
   } catch (error) {

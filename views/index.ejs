@@ -53,12 +53,10 @@
         <img src="<%= image_url %>" class="card-img-top" alt="<%= title %>" />
         <div class="card-body">
           <h5 class="card-title"><%= title %></h5>
-          <p class="card-text"><%= news_summary_short %>...</p>
-          <a
-            href="<%= site_url %>"
-            target="_blank"
-            class="btn btn-outline-primary"
-          >
+          <p class="card-text" id="summary-<%= id %>">
+            <%= news_summary_short %>
+          </p>
+          <a href="<%= site_url %>" target="_blank" class="btn btn-primary">
             Read full article
           </a>
         </div>
