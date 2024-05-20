@@ -20,7 +20,6 @@ const getArticles = async (req, res) => {
       }
     );
     const todayArticles = todayArticlesResponse.data;
-    console.log(todayArticles);
 
     res.render("index.ejs", { articles, todayArticles });
   } catch (error) {

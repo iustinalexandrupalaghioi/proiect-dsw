@@ -10,16 +10,16 @@
   <a href="/people" class="btn btn-primary">Who is in Space?</a>
   <% if(locals.todayArticles && todayArticles.length != 0) {%>
   <h2
-    class="align-self-center align-self-lg-start border-bottom w-100 pb-2 mt-3"
+    class="align-self-center align-self-lg-start border-bottom w-100 pb-2 mb-3 mt-3"
   >
     Today News For You
   </h2>
   <div
-    class="row w-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center justify-content-lg-start gap-2 p-lg-4"
+    class="row w-100 row-cols-1 row-cols-md-2 row-cols-lg-4 justify-content-center justify-content-lg-start gap-2"
   >
     <% todayArticles.forEach(article => { const { id, title, image_url,
     news_summary_short, site_url } = article %>
-    <div class="col" style="width: 18rem">
+    <div class="col p-0 mb-2" style="width: 18rem">
       <div class="card border-0 shadow w-100">
         <img src="<%= image_url %>" class="card-img-top" alt="<%= title %>" />
         <div class="card-body">
@@ -35,16 +35,17 @@
   </div>
   <% } if(locals.articles && articles.length != 0) { %>
   <h2
-    class="align-self-center align-self-lg-start border-bottom w-100 p-lg-4 mt-3"
+    class="align-self-center align-self-lg-start border-bottom w-100 pb-2 mb-3 mt-3"
   >
-    Other News From Space:
+    <%= todayArticles.length != 0 ? "Other News From Space" : "News From Space"
+    %>
   </h2>
   <div
-    class="row w-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center justify-content-lg-start gap-2 py-4 px-4"
+    class="row w-100 row-cols-1 row-cols-md-2 row-cols-lg-4 justify-content-center justify-content-lg-start gap-2"
   >
     <% articles.forEach(article => { const { id, title, image_url,
     news_summary_short, site_url } = article %>
-    <div class="col" style="width: 18rem">
+    <div class="col p-0 mb-2" style="width: 18rem">
       <div class="card border-0 shadow w-100">
         <img src="<%= image_url %>" class="card-img-top" alt="<%= title %>" />
         <div class="card-body">
