@@ -8,7 +8,7 @@
   </h1>
   <p>Check daily news from space or see who is in Space</p>
   <a href="/people" class="btn btn-primary">Who is in Space?</a>
-  <% if(locals.todayNews) {%>
+  <% if(locals.todayArticles && todayArticles.length != 0) {%>
   <h2
     class="align-self-center align-self-lg-start border-bottom w-100 pb-2 mt-3"
   >
@@ -17,7 +17,7 @@
   <div
     class="row w-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center justify-content-lg-start gap-2 p-lg-4"
   >
-    <% todayNews.forEach(article => { const { id, title, image_url,
+    <% todayArticles.forEach(article => { const { id, title, image_url,
     news_summary_short, site_url } = article %>
     <div class="col" style="width: 18rem">
       <div class="card border-0 shadow w-100">
@@ -25,11 +25,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= title %></h5>
           <p class="card-text"><%= news_summary_short %></p>
-          <a
-            href="<%= site_url %>"
-            target="_blank"
-            class="btn btn-outline-primary"
-          >
+          <a href="<%= site_url %>" target="_blank" class="btn btn-primary">
             Read full article
           </a>
         </div>
@@ -37,7 +33,7 @@
     </div>
     <% }) %>
   </div>
-  <% } if(locals.news) { %>
+  <% } if(locals.articles && articles.length != 0) { %>
   <h2
     class="align-self-center align-self-lg-start border-bottom w-100 p-lg-4 mt-3"
   >
@@ -46,7 +42,7 @@
   <div
     class="row w-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center justify-content-lg-start gap-2 py-4 px-4"
   >
-    <% news.forEach(article => { const { id, title, image_url,
+    <% articles.forEach(article => { const { id, title, image_url,
     news_summary_short, site_url } = article %>
     <div class="col" style="width: 18rem">
       <div class="card border-0 shadow w-100">
