@@ -39,7 +39,6 @@ const getPeople = async (req, res) => {
       });
       // sortedPeople.push(group);
     });
-    console.log(sortedPeople);
 
     res.render("people.ejs", { sortedPeople, number });
   } catch (error) {
