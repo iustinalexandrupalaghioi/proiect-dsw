@@ -6,7 +6,7 @@ import path from "path";
 const app = express();
 // const port = 8000;
 
-app.set("views", path.join(__dirname, "../views"));
+app.set("views", path.join(import.meta.url, "../views"));
 app.use(express.static("public"));
 app.use("/", router);
 
