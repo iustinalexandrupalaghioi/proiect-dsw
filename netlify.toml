@@ -3,5 +3,5 @@
   node_bundler = "esbuild"
 [[redirects]]
   from = "/*"
-to = "/dist/index.html"
+to = "/functions/api.js"
 status = 200
