@@ -25,7 +25,7 @@ const getArticles = async (req, res) => {
   } catch (error) {
     res.render("index.ejs", {
       error,
-      message: "Oops! Something went wrong. Please try again later!",
+      message: "Oops! Something went wrong. Please try again later.",
     });
     console.error(error.message);
   }
