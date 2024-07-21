@@ -13,4 +13,4 @@ app.use("/api", router);
 //   console.log(`Server running on port ${port}`);
 // });
 
-export const handler = serverless(api);
+export const handler = serverless(app);
