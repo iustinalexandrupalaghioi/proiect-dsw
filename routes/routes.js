@@ -1,8 +1,8 @@
-const express = require("express");
-const getArticles = require("../controllers/articles-controller.js");
-const getPeople = require("../controllers/people-controller.js");
+import { Router } from "express";
+import getArticles from "../controllers/articles-controller.js";
+import getPeople from "../controllers/people-controller.js";
 
-const router = express.Router();
+const router = Router();
 
 //endpoint to get space news - homepage
 

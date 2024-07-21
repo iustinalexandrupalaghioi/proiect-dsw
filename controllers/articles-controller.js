@@ -1,5 +1,5 @@
-require("dotenv/config");
-const axios = require("axios");
+import "dotenv/config";
+import axios from "axios";
 
 const getArticles = async (req, res) => {
   const headers = {
