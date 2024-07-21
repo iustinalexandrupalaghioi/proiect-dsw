@@ -1,6 +1,6 @@
-import express from "express";
-import router from "../routes/routes.js";
-import serverless from "serverless-http";
+const express = require("express");
+const router = require("../routes/routes.js");
+const serverless = require("serverless-http");
 const path = require("path");
 
 const app = express();

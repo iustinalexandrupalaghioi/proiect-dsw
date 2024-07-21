@@ -1,6 +1,6 @@
-import axios from "axios";
-import "dotenv/config";
-import slugify from "slugify";
+const axios = require("axios");
+require("dotenv/config");
+const slugify = require("slugify");
 
 const getPeople = async (req, res) => {
   try {
