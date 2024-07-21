@@ -14,4 +14,4 @@ app.use("/", router);
 //   console.log(`Server running on port ${port}`);
 // });
 
-module.exports.handler = serverless(app);
+module.exports = serverless(app);
